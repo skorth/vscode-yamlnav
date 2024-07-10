@@ -10,8 +10,8 @@ function activate(context) {
   let searchPaths = vscode.commands.registerTextEditorCommand('yamlnav.search', function (editor) {
     const file = editor.document.fileName
 
-    if (path.extname(file) !== '.yml') {
-      vscode.window.showErrorMessage("Only works with .yml file.")
+    if (path.extname(file) !== '.yml' && path.extname(file) !== '.yaml') {
+      vscode.window.showErrorMessage("Only works with .yml or .yaml files.")
       return
     }
 
@@ -36,8 +36,8 @@ function activate(context) {
   let copyPath = vscode.commands.registerTextEditorCommand('yamlnav.copy', function(editor) {
     const file = editor.document.fileName
 
-    if (path.extname(file) !== '.yml') {
-      vscode.window.showErrorMessage("Only works with .yml file.")
+    if (path.extname(file) !== '.yml' && path.extname(file) !== '.yaml') {
+      vscode.window.showErrorMessage("Only works with .yml or .yaml files.")
       return
     }
 
